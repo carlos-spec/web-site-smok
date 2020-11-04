@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Es on Smok Media</title>
+    <link>https://smokmedia.gitlab.io/assets/smokrat/es/es/</link>
+    <description>Recent content in Es on Smok Media</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Sun, 29 Mar 2020 19:33:57 -0300</lastBuildDate>
+    
+	<atom:link href="https://smokmedia.gitlab.io/assets/smokrat/es/es/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hola</title>
+      <link>https://smokmedia.gitlab.io/assets/smokrat/es/es/posts/hola/</link>
+      <pubDate>Sun, 29 Mar 2020 19:33:57 -0300</pubDate>
+      
+      <guid>https://smokmedia.gitlab.io/assets/smokrat/es/es/posts/hola/</guid>
+      <description>A blog testing</description>
+    </item>
+    
+  </channel>
+</rss>

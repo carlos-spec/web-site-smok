@@ -1,0 +1,135 @@
+{{ define "main" }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<!-- {{ partial "head.html" . }}
+{{ partial "header.html" . }} -->
+
+
+  <section class="section pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h2 class="section-title">{{ .Site.Data.channel.conf.title }}</h2>
+          
+
+          {{ .Site.Data.channel.conf.description | markdownify }}
+        </div>
+        <div class="col-md-4 text-center drag-lg-top">
+          <div class="shadow-down mb-4">
+            <div id="youtubeContainer" class="g-ytsubscribe" data-channelid="{{ .Site.Data.channel.conf.channelid }}" data-layout="full" data-count="hidden"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- releases -->
+  <section class="section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="btn-group btn-group-toggle justify-content-center d-flex flex-wrap" data-toggle="buttons">
+            <label class="btn btn-sm btn-primary active">
+              <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
+            </label>
+            {{ range .Site.Data.channel.list }}
+            <label class="btn btn-sm btn-primary">
+              <input type="radio" name="shuffle-filter" value="{{.type}}" />{{ .title }}
+            </label>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <div class="row shuffle-wrapper">
+        {{ range .Site.Data.channel.releases }}
+        <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{{range $index, $element:= .projectType }}{{if eq $index 0}} {{else}},{{end}}&quot;{{.type}}&quot;{{ end }}]">
+          <div class="position-relative rounded hover-wrapper">
+            <img src="{{.image | absURL }}" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+            <div class="hover-overlay">
+              <div class="hover-content">
+                <a class="btn btn-light btn-sm" href="{{ .projectURL }}"> 👀 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  <!-- /releases -->
+
+
+  {{ if .Site.Data.channel.podcast.enable }}
+    <!-- podcast -->
+    <section class="section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <div class="btn-group btn-group-toggle justify-content-center d-flex flex-wrap" data-toggle="buttons">
+              <label class="btn btn-sm btn-primary active">
+                <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
+              </label>
+              {{ range .Site.Data.channel.list }}
+              <label class="btn btn-sm btn-primary">
+                <input type="radio" name="shuffle-filter" value="{{.type}}" />{{ .title }}
+              </label>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        <div class="row shuffle-wrapper">
+          {{ range .Site.Data.channel.podcast.items }}
+          <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{{range $index, $element:= .projectType }}{{if eq $index 0}} {{else}},{{end}}&quot;{{.type}}&quot;{{ end }}]">
+            <div class="position-relative rounded hover-wrapper">
+              <img src="{{.image | absURL }}" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+              <div class="hover-overlay">
+                <div class="hover-content">
+                  <a class="btn btn-light btn-sm" href="{{ .projectURL }}">view project</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+    <!-- /podcast -->
+  {{ end }}
+  <!-- portfolio -->
+  <!-- <section class="section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="btn-group btn-group-toggle justify-content-center d-flex flex-wrap" data-toggle="buttons">
+            <label class="btn btn-sm btn-primary active">
+              <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
+            </label>
+            {{ range .Site.Data.portfolio.list }}
+            <label class="btn btn-sm btn-primary">
+              <input type="radio" name="shuffle-filter" value="{{.type}}" />{{ .title }}
+            </label>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <div class="row shuffle-wrapper">
+        {{ range .Site.Data.portfolio.item }}
+        <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{{range $index, $element:= .projectType }}{{if eq $index 0}} {{else}},{{end}}&quot;{{.type}}&quot;{{ end }}]">
+          <div class="position-relative rounded hover-wrapper">
+            <img src="{{.image | absURL }}" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+            <div class="hover-overlay">
+              <div class="hover-content">
+                <a class="btn btn-light btn-sm" href="{{ .projectURL }}">view project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section> -->
+  <!-- /portfolio -->
+
+
+{{ end }}

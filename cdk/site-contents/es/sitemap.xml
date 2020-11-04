@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/es/</loc>
+    <lastmod>2020-03-29T19:33:57-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/es/posts/hola/</loc>
+    <lastmod>2020-03-29T19:33:57-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/</loc>
+    <lastmod>2020-03-29T19:33:57-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smokmedia.gitlab.io/assets/smokrat/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://smokmedia.gitlab.io/assets/smokrat/es/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/tags/advice/</loc>
+    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smokmedia.gitlab.io/assets/smokrat/tags/advice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://smokmedia.gitlab.io/assets/smokrat/es/tags/advice/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/tags/automation/</loc>
+    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smokmedia.gitlab.io/assets/smokrat/tags/automation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://smokmedia.gitlab.io/assets/smokrat/es/tags/automation/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/categories/automation-system/</loc>
+    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smokmedia.gitlab.io/assets/smokrat/categories/automation-system/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://smokmedia.gitlab.io/assets/smokrat/es/categories/automation-system/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/categories/</loc>
+    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smokmedia.gitlab.io/assets/smokrat/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://smokmedia.gitlab.io/assets/smokrat/es/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/blog/blog-post-1/</loc>
+    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smokmedia.gitlab.io/assets/smokrat/blog/blog-post-1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://smokmedia.gitlab.io/assets/smokrat/es/blog/blog-post-1/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/blog/</loc>
+    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smokmedia.gitlab.io/assets/smokrat/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://smokmedia.gitlab.io/assets/smokrat/es/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://smokmedia.gitlab.io/assets/smokrat/es/tags/</loc>
+    <lastmod>2019-07-06T15:27:17+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://smokmedia.gitlab.io/assets/smokrat/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://smokmedia.gitlab.io/assets/smokrat/es/tags/"
+                />
+  </url>
+  
+</urlset>

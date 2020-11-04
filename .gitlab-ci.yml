@@ -1,0 +1,14 @@
+image: monachus/hugo
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  script:
+  - cd site && hugo && mv public ..
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+

@@ -1,0 +1,267 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ $baseURL := .Site.BaseURL }}
+
+<!-- =============================
+      Start Header
+    =============================== -->
+<section class="miniheader" id="headerblog">
+  <div class="logo">
+    <img style="width:100px;float:left" class="img-fluid" src="{{ .Site.Params.logo_light | relURL }}" alt="{{ .Site.Title }}">
+  </div> 
+  <!-- <div class="slider-prev-button slider-button">
+    <i class="fa fa-angle-left"></i>
+  </div>
+  <div class="slider-next-button slider-button">
+    <i class="fa fa-angle-right"></i>
+  </div> -->
+</section>
+  <!-- {{ with $data.homepage.hero }}
+  <div class="owl-carousel owl-full-width owl-theme" id="background-slide">
+    {{ range .slider_image }}
+    <div class="slider"><img class="img-fluid" src="{{ . | absURL }}" alt="slider-background"></div>
+    {{ end }}
+  </div>
+  <div class="container">
+    <div class="row content">
+      <div class="col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2 head-container">
+        <div class="head-holder">
+          <h1 class="introduction">{{ .title | markdownify | emojify }}</h1>
+          <div class="animated-text">
+            <strong class="cd-headline clip">
+              <span class="cd-words-wrapper">
+                {{ range $index, $elements:= .occupations }}
+                <b {{ if eq $index 0 }} class="is-visible" {{ end }}>{{ . }}</b>
+                {{ end }}
+              </span>
+            </strong>
+          </div>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a class="hireMe" href="{{ .link }}">{{ .label }}</a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ end }} -->
+
+  <!-- {{ if $data.homepage.fullscreen_nav.enable }}
+  <div class="navigation-icon">
+    <input id="burger" type="checkbox" />
+    <label for="burger" class="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  <div class="fullscreen-nav-container"
+    style="background-image: url('{{ $data.homepage.fullscreen_nav.bg_image | absURL }}');">
+    <div class="container-fluid">
+      <div class="full-nav-container row">
+        <div class="full-nav-holder">
+          <div class="full-nav-content">
+            <div class="name">
+              {{ with $data.homepage.fullscreen_nav.first_name }}<div class="first-name">{{ . }}</div>{{ end }}
+              {{ with $data.homepage.fullscreen_nav.last_name }}<div class="last-name">{{ . }}</div>{{ end }}
+            </div>
+            <div class="fulscreen-nav">
+              <ul class="list-inline fullscreen-nav-holder">
+                {{ range .Site.Menus.main }}
+                <li><a class="text-uppercase" href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+              </ul>
+            </div>
+            <div class="full-nav-icon-holder">
+              <ul class="full-nav-icons list-inline">
+                {{ range .Site.Params.social }}
+                <li><a href="{{ .link | safeURL }}"><i class="fa {{ .icon }}"></i></a></li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }} -->
+<!-- =============================
+       End Header
+    =============================== -->
+
+<!-- =============================
+      Start Menu
+    =============================== -->
+<section class="menu" id="menu">
+
+  <nav>
+    <!-- desktop-menu -->
+    <div class="menu-container">
+      <ul class="desktop-menu list-inline mb-0" id="desktop-menu">
+        {{ range .Site.Menus.main }}
+          {{ if eq .Name "Blog" }}
+            <li class="menu-item hvr-underline-from-left 1"><a href="{{ $baseURL }}blog">{{ .Name }}</a></li>
+          {{ else }}
+            <li class="menu-item hvr-underline-from-left 1"><a href="{{ $baseURL }}{{.URL}}">{{ .Name }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      <!-- Language List -->
+      {{- if .Site.IsMultiLingual }}
+      <select id="select-language" onchange="location = this.value;">
+        {{ $siteLanguages := .Site.Languages}}
+        {{ $pageLang := .Page.Lang}}
+        {{ range .Page.AllTranslations }}
+        {{ $translation := .}}
+        {{ range $siteLanguages }}
+        {{ if eq $translation.Lang .Lang }}
+        {{ $selected := false }}
+        {{ if eq $pageLang .Lang}}
+        <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}
+        </option>
+        {{ else }}
+        <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+      </select>
+      {{ end }}
+      <!-- /desktop-menu -->
+
+      <!-- mobile-menu -->
+      <div class="mobile-menu">
+        <a class="menu-link">
+          <div class="mobile-menu-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a>
+        <div class="mobile-menu-logo"><a href="{{.Site.BaseURL | relLangURL }}"><img class="img-fluid"
+              src="{{ .Site.Params.logo_dark | absURL }}" alt="{{ .Site.Title }}"></a>
+        </div>
+        <div class="menu-slider">
+          <nav>
+            <ul class="mobile-menu-list">
+              {{ range .Site.Menus.main }}
+              <li class="hvr-shutter-out-vertical mobile-menu-item 1"><a href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+            <!-- Language List -->
+            {{- if .Site.IsMultiLingual }}
+            <select class="ml-4" id="select-language" onchange="location = this.value;">
+              {{ $siteLanguages := .Site.Languages}}
+              {{ $pageLang := .Page.Lang}}
+              {{ range .Page.AllTranslations }}
+              {{ $translation := .}}
+              {{ range $siteLanguages }}
+              {{ if eq $translation.Lang .Lang }}
+              {{ $selected := false }}
+              {{ if eq $pageLang .Lang}}
+              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}
+              </option>
+              {{ else }}
+              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
+              {{ end }}
+              {{ end }}
+              {{ end }}
+              {{ end }}
+            </select>
+            {{ end }}
+            <ul class="mobile-menu-icons list-inline">
+              {{ range .Site.Params.social }}
+              <li><a href="{{ .link | safeURL }}"><i class="fa {{ .icon }}"></i></a></li>
+              {{ end }}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+<!-- =============================
+      End Menu
+    =============================== -->
+
+<!-- =============================
+    Blogs
+=============================== -->
+{{ if $data.homepage.blog.enable }}
+    <section class="portfolio posts" id=blog>
+        <div class="container-fluid text-center col-lg-6 col-md-6 col-sm-6 about-me-text d-flex align-self-center skill">
+          <div class="row text-holder portfolio-holder text-left">
+
+            <div class="col-12 text-center">
+                <h1 class="wow fadeInUp" data-wow-duration="1.5s">Blog</h1>
+            </div>
+
+              <div class="row portfolio-holder text-left">
+                <!-- blog post -->
+                {{ $paginator := .Paginate ( where .Data.Pages "Type" "blog") }}
+                {{ template "_internal/pagination.html" . }}
+
+        <div class="col-lg-10 col-md-10 col-sm-10 col-10 mx-auto">
+            <div class="row filtr-container wow fadeInUp list" data-wow-duration="1.5s">
+                {{ range $paginator.Pages }}
+
+                <!-- <div class="col-lg-4 col-md-6 col-sm-6 col-12 filtr-item data-category="{{/* .Params.category | urlize */}}""> 
+                    <div class="item-holder">
+                      <a href="{{ .Params.Image | relURL }}" title="{{ .Title | safeHTML }}">
+                          <img src="{{ .Params.Image | relURL }}" alt="{{ .Title | safeHTML }}">
+                        <div class="item-caption">
+                          <h2>{{ .Title | safeHTML }}</h2>
+                          <p>{{/* .category | title */}}</p>
+                          <div class="item-created">{{ .Params.date }}</div>
+                        </div>
+                      </a>
+                    </div>
+                </div> -->
+
+                <div class="col-sm-6 mb-5 posts-images about-me-text wow fadeInUp" data-wow-duration="1.5s">
+                  <article
+                    class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+                    <img class="card-img-top rounded-0" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
+                    <div class="card-body">
+                      <!-- post meta -->
+                      <ul class="list-inline mb-3">
+                        <!-- post date -->
+                        <li class="list-inline-item mr-3 ml-0"><i class="ti-calendar"></i>
+                          {{ .PublishDate.Format "02 Jan, 2006" }}</li>
+                        <!-- author -->
+                        {{/*  FIXME! Add author, but we need to add pages to each profile  */}}
+                        {{/*  <li class="list-inline-item mr-3 ml-0"><i class="ti-user"></i> <a
+                            href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.Author | title }}</a>
+                        </li>  */}}
+                      </ul>
+                      <h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                      <p class="card-text">{{ .Summary | truncate 100 }}</p>
+                      <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">{{ i18n "read_more" }}</a>
+                    </div>
+                  </article>
+                </div>
+
+                {{ end }}
+            </div>
+        </div>
+
+                <div class="col-12 mt-4">
+                  {{ template "_internal/pagination.html" . }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{{ end }}
+
+<!-- =============================
+    End Blogs
+=============================== -->
+{{ partial "footer.html" . }}
+{{ end }}
+

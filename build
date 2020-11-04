@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd themes/krossmok ; git pull ; cd ../..
+
+hugo --themesDir themes/ serve --disableFastRender

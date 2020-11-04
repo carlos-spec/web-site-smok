@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Smok Media</title>
+    <link>https://smokmedia.gitlab.io/assets/smokrat/es/tags/</link>
+    <description>Recent content in Tags on Smok Media</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Sat, 06 Jul 2019 15:27:17 +0600</lastBuildDate>
+    
+	<atom:link href="https://smokmedia.gitlab.io/assets/smokrat/es/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Advice</title>
+      <link>https://smokmedia.gitlab.io/assets/smokrat/es/tags/advice/</link>
+      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
+      
+      <guid>https://smokmedia.gitlab.io/assets/smokrat/es/tags/advice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>https://smokmedia.gitlab.io/assets/smokrat/es/tags/automation/</link>
+      <pubDate>Sat, 06 Jul 2019 15:27:17 +0600</pubDate>
+      
+      <guid>https://smokmedia.gitlab.io/assets/smokrat/es/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
